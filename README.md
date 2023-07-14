@@ -1,6 +1,6 @@
 0x00. AirBnB Clone Project
 
-AirBnB Logo
+
 Project Description:
 
 This is the first part of the AirBnB clone project where we worked on the backend of the project whiles interfacing it with a console application with the help of the cmd module in python.
@@ -35,7 +35,7 @@ Installing
 
 You will need to clone the repository of the project from Github. This will contain the simple shell program and all of its dependencies.
 
-git clone https://github.com/jzamora5/AirBnB_clone.git
+git clone https://github.com/DzilafhoPia/AirBnB_clone.git
 
 After cloning the repository you will have a folder called AirBnB_clone. In here there will be several files that allow the program to work.
 
