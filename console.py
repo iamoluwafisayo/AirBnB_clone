@@ -36,15 +36,15 @@ class HBNBCommand(cmd.Cmd):
 
     def get_object(self, class_name, obj_id):
         '''
-        Get an object from storage based on its id and type
+        Get an obj from storage based on its id and type
 
         Args;
         class_name(str): the name of the type to which the desired
-            object belongs, i.e, its type
-        obj_id(str): the id of the object to get
+            obj belongs, i.e, its type
+        obj_id(str): the id of the obj to get
 
         Returns: The dict representation of the object if found,
-            None otherwise
+            None otherwise.
         '''
         all_objects = self.storage.all()
         for obj in all_objects.keys():
@@ -59,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
         Create an instance of <line>, provided <line> is a valid class name
 
         Args:
-        line(str): the user's input string representing the class to instantiate
+        line(str): the user's input str representing the class to instantiate
         '''
         line = line.split()
         if line is None or len(line) == 0:
@@ -75,10 +75,10 @@ class HBNBCommand(cmd.Cmd):
     def do_show(self, line):
         '''
         print a str representation of an instance based on the name given by
-        user and the id
+        user and the id.
 
         Args:
-        line(str): the user's input str representing the instance to be printed.
+        line(str): the user's input string representing the instance to print
         '''
         line = line.split()
         if line is None or len(line) == 0:
@@ -98,10 +98,10 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         '''
-        Delete an instance using the class name and the instance id.
+        Delete an instance using the class name and the instance id
 
         Args:
-        line(str): the user's input string representing the instance to destroy.
+        line(str): the user's input string representing the instance to destroy
         '''
         line = line.split()
         if line is None or len(line) == 0:
@@ -125,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
         Print the str representation of all instances of the class name
             entered by user, as a list
 
-        Arguments:
+        Args:
         line(str): the name of the class to print the instances of
         '''
         line = line.split()
@@ -142,7 +142,7 @@ class HBNBCommand(cmd.Cmd):
         Print the str representation of all instances of the class name
             entered by user
 
-        Arguments:
+        Args:
         line(str): the name of the class to print the instances of
         '''
         line = line.split()
