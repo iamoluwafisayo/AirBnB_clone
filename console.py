@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Defines the HBnB console."""
 import cmd
 import re
@@ -33,8 +32,9 @@ def parse(arg):
 
 
 class HBNBCommand(cmd.Cmd):
-    """Defines the HBNB command interpreter.
-    Attrs:
+    """Defines the HolbertonBnB command interpreter.
+
+    Attributes:
         prompt (str): The command prompt.
     """
 
@@ -98,7 +98,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """Usage: show <class> <id> or <class>.show(<id>)
-        Display the str representation of a class instance of a given id.
+        Display the string representation of a class instance of a given id.
         """
         argl = parse(arg)
         objdict = storage.all()
@@ -132,7 +132,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """Usage: all or all <class> or <class>.all()
-        Display str representations of all instances of a given class.
+        Display string representations of all instances of a given class.
         If no class is specified, displays all instantiated objects."""
         argl = parse(arg)
         if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
@@ -157,12 +157,11 @@ class HBNBCommand(cmd.Cmd):
         print(count)
 
     def do_update(self, arg):
-        """ Usage: update <class> <id> <attribute_name> <attribute_value> or
-            <class>.update(<id>, <attribute_name>, <attribute_value>) or
-            <class>.update(<id>, <dictionary>)
-            Update a class instance of a given id by adding or updating
-            a given attr key/value pair or dictionary. """
-
+        """Usage: update <class> <id> <attribute_name> <attribute_value> or
+       <class>.update(<id>, <attribute_name>, <attribute_value>) or
+       <class>.update(<id>, <dictionary>)
+        Update a class instance of a given id by adding or updating
+        a given attribute key/value pair or dictionary."""
         argl = parse(arg)
         objdict = storage.all()
 
@@ -181,9 +180,12 @@ class HBNBCommand(cmd.Cmd):
         if len(argl) == 2:
             print("** attribute name missing **")
             return False
-        if len(argl) == 3 and not isinstance(eval(argl[2]), dict):
-            print("** value missing **")
-            return False
+        if len(argl) == 3:
+            try:
+                type(eval(argl[2])) != dict
+            except NameError:
+                print("** value missing **")
+                return False
 
         if len(argl) == 4:
             obj = objdict["{}.{}".format(argl[0], argl[1])]
@@ -192,7 +194,7 @@ class HBNBCommand(cmd.Cmd):
                 obj.__dict__[argl[2]] = valtype(argl[3])
             else:
                 obj.__dict__[argl[2]] = argl[3]
-        elif isinstance(eval(argl[2]), dict):
+        elif type(eval(argl[2])) == dict:
             obj = objdict["{}.{}".format(argl[0], argl[1])]
             for k, v in eval(argl[2]).items():
                 if (k in obj.__class__.__dict__.keys() and
