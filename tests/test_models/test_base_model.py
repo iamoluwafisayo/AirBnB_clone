@@ -65,7 +65,7 @@ class TestBaseModel(unittest.TestCase):
             self.assertEqual(type(getattr(o, k, None)), v)
 
     def test_3_datetime_created(self):
-        """Tests if updated_at & created_at are current at moment of creation."""
+        """Tests if updated_at & created_at are current @moment of creation."""
         date_now = datetime.now()
         b = BaseModel()
         diff = b.updated_at - b.created_at
@@ -191,4 +191,3 @@ class TestBaseModel(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
