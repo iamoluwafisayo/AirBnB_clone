@@ -6,7 +6,7 @@ This is one phase of the Airbnb Clone: the HTML and CSS part. The Images folder 
 
 
     Languages: HTML, CSS
-    OS: Ubuntu 14.04 LTS
+    OS: Ubuntu 20.04 LTS
     Style guidelines: ./wc3validator.py [filename]
     Preview: paste index.html link and run on: http://htmlpreview.github.io/?
 
